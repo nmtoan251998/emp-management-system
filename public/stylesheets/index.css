@@ -1,0 +1,19 @@
+body{
+    color: #f7f6f1;
+    background-image: url('/images/bg-logo.jpg');
+    background-attachment: fixed;
+    background-position: top;
+    font-size: 16px;
+    margin: 10% 20% 0 ;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}

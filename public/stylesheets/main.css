@@ -1,0 +1,18 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    position: fixed;
+    height: 50px;
+    min-width: 100%;
+    padding: 5px 10% 5px;
+    overflow: hidden;
+    color: black;
+}
