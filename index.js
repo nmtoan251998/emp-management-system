@@ -35,6 +35,11 @@ app.get('/members', (req,res) => {
     res.render('./members/members-view')
 });
 
+//get home main-view
+app.get('/members/members-create', (req,res) => {
+    res.render('./members/members-create-view')
+});
+
 
 
 /*POST*/ 

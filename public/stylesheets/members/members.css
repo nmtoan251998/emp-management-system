@@ -1,0 +1,22 @@
+header{
+    margin-bottom: 5%;
+}
+
+.content{
+    margin: 0 10%;
+    position: relative;
+}
+
+.content .my-btn{
+    position: absolute;
+    right: 0;
+}
+.content .my-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.content .my-btn a:hover{
+    text-decoration: none;
+    color: white;
+}

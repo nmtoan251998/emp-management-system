@@ -1,0 +1,15 @@
+extends ../layouts/common
+block main
+    header
+        include ../home/header-view
+    link(rel="stylesheet", href="/stylesheets/members/members-create.css")
+    .content
+        form(action="" method="POST")
+            label Member Information:
+            .row
+                input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name")
+                input.form-control.mb-3(type="date" name="dob")
+                input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone")
+                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="email")
+                input.form-control.mb-3(type="text" placeholder="Facebook URL (Example: facebook.com/minton.2598)" name="facebook")
+            button.btn.btn-outline-dark Create
