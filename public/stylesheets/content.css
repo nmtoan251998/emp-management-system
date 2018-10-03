@@ -1,0 +1,32 @@
+content .slogan{
+    font-weight: 200;
+    font-size: 35px;
+    text-align: center;
+    word-spacing: 15px;
+    margin: 0 20%;
+    padding-bottom: 300px;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+content .introduction{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5% 20%;
+    padding-bottom: 10%;
+}
+
+content .introduction .des{
+    min-height: 50px;
+    padding-left: 10%;
+}
+
+content .introduction .des a{
+    color: #0080c0;
+}
+content .introduction .des a:hover{
+    text-decoration: underline;
+}
+
+
