@@ -2,24 +2,23 @@ extends ../layouts/common
 block main
     header
         include ../home/header-view
-    link(rel="stylesheet", href="/stylesheets/members.css")
+    link(rel="stylesheet", href="/stylesheets/members/members.css")
     .content
-
+        button.btn.btn-outline-dark.my-btn 
+            a(href="/members/members-create") Add Members
         form.form-inline.form-group
             select.custom-select.mr-5(required)
                 option(value="") Choose community location
-                option(value="All") All
                 option(value="Cantho") Cantho
                 option(value="Ho Chi Minh City") Ho Chi Minh City
                 option(value="Hanoi") Hanoi
                 option(value="Da Nang") Da Nang
                 option(value="Da Lat") Da Lat
             input.form-control.mr-sm-2(type="search", placeholder="Search by Name", aria-lable="Search")
-            button.btn.btn-outline-success.my-2.my-sm-0(type="Submit") Search
+            button.btn.btn-dark.my-2.my-sm-0(type="Submit") Search
         table.table.table-bordered.table-hover
             thead.thead-light
                 tr
-                    th(scope="col") #
                     th(scope="col") Name
                     th(scope="col") Dob
                     th(scope="col") Phone
