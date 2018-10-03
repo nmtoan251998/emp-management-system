@@ -5,10 +5,7 @@ const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
 
-
 //locally require
-
-
 
 //use express
 const app = express();
@@ -22,7 +19,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 bodyParser.urlencoded({extended: true});
 
-
+/*GET*/ 
 //get index-view
 app.get('/', (req,res) => {
     res.render('./index-view')
@@ -33,5 +30,14 @@ app.get('/main', (req,res) => {
     res.render('./home/main-view')
 });
 
+//get home main-view
+app.get('/members', (req,res) => {
+    res.render('./members/members-view')
+});
 
-app.listen(port, () => console.log('Server started!'))
+
+
+/*POST*/ 
+
+
+app.listen(port, () => console.log(`Server started on port ${port}!`))
