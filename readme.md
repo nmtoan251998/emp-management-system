@@ -8,3 +8,12 @@
 <h3>HTML</h3>
 <h3>CSS</h3>
 <h3>Bootstrap</h3>
+
+<h2>USE TERM</h2>
+<p>Try to install nodemon package through</p>
+<code>npm install --save-dev nodemon</code>
+<p>for temporary nodemon</p>
+
+<p>Or</p>
+<code>npm install --save nodemon</code>
+<p>for permanently nodemon</p>
