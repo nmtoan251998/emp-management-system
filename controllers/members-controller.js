@@ -1,10 +1,3 @@
-const express = require('express');
-const router = express();
-
-const bodyParser = require('body-parser');
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended: true}));
-
 let members = [
     {
         name: "Nguyễn Minh Toàn",
@@ -24,20 +17,17 @@ let members = [
     }
 ]
 
-//get members members-view
-router.get('/', (req,res) => {
+module.exports.getMembers = (req,res) => {
     res.render('../views/members/members-view', {
         members: members
     })
-});
+};
 
-//get members members-create-view
-router.get('/members-create', (req,res) => {
+module.exports.getCreateMembers = (req,res) => {
     res.render('../views/members/members-create-view')
-});
+};
 
-//get members members-search-view
-router.get('/members-search', (req,res) => {
+module.exports.getSearchMembers = (req,res) => {
     //get query parameter
     let que = req.query.q;
     //filter by name
@@ -46,13 +36,9 @@ router.get('/members-search', (req,res) => {
     res.render('../views/members/members-view', {
         members: matchedMembers
     })
-});
+};
 
-/*POST*/ 
-//get members members-create-view
-router.post('/members-create', (req,res) => {    
+module.exports.postCreateMembers = (req,res) => {    
     members.push(req.body);    
-    res.redirect('/')
-});
-
-module.exports = router;
+    res.redirect('/members');
+};
