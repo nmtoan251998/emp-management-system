@@ -4,7 +4,7 @@ block main
         include ../home/header-view
     link(rel="stylesheet", href="/stylesheets/members/members-create.css")
     .content
-        form(action="" method="POST")
+        form.form-group(action="/members/members-create" method="POST")
             label Member Information:
             .row
                 input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name")
@@ -12,4 +12,11 @@ block main
                 input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone")
                 input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="email")
                 input.form-control.mb-3(type="text" placeholder="Facebook URL (Example: facebook.com/minton.2598)" name="facebook")
-            button.btn.btn-outline-dark Create
+                select.custom-select
+                    option(value="Coders.Tokyo") Coders.Tokyo
+                    option(value="Cần Thơ") Cantho
+                    option(value="Hồ Chí Minh") Ho Chi Minh City
+                    option(value="Hà Nội") Hanoi
+                    option(value="Đà Nẵng") Da Nang
+                    option(value="Đà Lạt") Da Lat
+            button.btn.btn-outline-dark.mt-2 Create

@@ -3,19 +3,21 @@ block main
     header
         include ../home/header-view
     link(rel="stylesheet", href="/stylesheets/members/members.css")
-    .content
-        button.btn.btn-outline-dark.my-btn 
-            a(href="/members/members-create") Add Members
-        form.form-inline.form-group
-            select.custom-select.mr-5(required)
-                option(value="") Choose community location
-                option(value="Cantho") Cantho
-                option(value="Ho Chi Minh City") Ho Chi Minh City
-                option(value="Hanoi") Hanoi
-                option(value="Da Nang") Da Nang
-                option(value="Da Lat") Da Lat
-            input.form-control.mr-sm-2(type="search", placeholder="Search by Name", aria-lable="Search")
-            button.btn.btn-dark.my-2.my-sm-0(type="Submit") Search
+    .content            
+        button.btn.btn-outline-dark.create-btn 
+            a(href="/members/members-create") Create Members
+        form(method="GET" action="/members/members-search").form-inline
+            input.form-control.mr-sm-2(type="search", placeholder="Search by Name", aria-lable="Search", name="q")
+            button.btn.btn-outline-dark.search-btn Search
+            form(method="GET").form-inline.form-group
+                select.custom-select.ml-5(required)
+                    option(value="Location") Location
+                    option(value="Coders.Tokyo") Coders.Tokyo
+                    option(value="Cần Thơ") Cantho
+                    option(value="Hồ Chí Minh") Ho Chi Minh City
+                    option(value="Hà Nội") Hanoi
+                    option(value="Đà Nẵng") Da Nang
+                    option(value="Đà Lạt") Da Lat    
         table.table.table-bordered.table-hover
             thead.thead-light
                 tr
@@ -24,5 +26,18 @@ block main
                     th(scope="col") Phone
                     th(scope="col") Mail
                     th(scope="col") 
-                        i(class="fab fa-facebook-f")
-                        
+                        span Facebook
+                    th.pr-0(scope="col") Modify
+                each member in members
+                    tr
+                        td(disabled)= member.name
+                        td= member.dob
+                        td= member.phone
+                        td= member.email
+                        td
+                            a(href="//www."+member.facebook)= member.facebook
+                        td.pr-0
+                            a.pr-5(href="#")
+                                i(class="fas fa-trash")
+                            a.pl-3(href="#")
+                                i(class="fas fa-pen")
