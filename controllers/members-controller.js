@@ -38,7 +38,7 @@ module.exports.getSearchMembers = (req,res) => {
     })
 };
 
-module.exports.postCreateMembers = (req,res) => {    
-    members.push(req.body);    
+module.exports.postCreateMembers = (req,res) => {
+    members.push(req.body);
     res.redirect('/members');
 };

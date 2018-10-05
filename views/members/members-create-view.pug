@@ -4,13 +4,16 @@ block main
         include ../home/header-view
     link(rel="stylesheet", href="/stylesheets/members/members-create.css")
     .content
+        if errors
+            each error in errors
+                .alert.alert-danger= error 
         form.form-group(action="/members/members-create" method="POST")
             label Member Information:
             .row
-                input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name")
-                input.form-control.mb-3(type="date" name="dob")
-                input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone")
-                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="email")
+                input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name" value=(values) ? values.name : '')
+                input.form-control.mb-3(type="date" name="dob" value=values ? values.dob : '')
+                input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone" value=values ? values.phone : '')
+                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="email" value=values ? values.email : '')
                 input.form-control.mb-3(type="text" placeholder="Facebook URL (Example: facebook.com/minton.2598)" name="facebook")
                 select.custom-select
                     option(value="Coders.Tokyo") Coders.Tokyo
