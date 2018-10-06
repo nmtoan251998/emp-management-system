@@ -22,15 +22,22 @@ module.exports.getSearchMembers = (req,res) => {
     })
 };
 
-module.exports.postCreateMembers = (req,res) => {
-    let newMember = req.body;
-    Members.insert({
-        name: newMember.name,
-        dob: newMember.dob,
-        phone: newMember.phone,
-        email: newMember.email,
-        facebook: newMember.facebook,
-        city: newMember.city
+module.exports.postCreateMembers = async (req,res) => {
+    let newMember = new Members({
+        name: req.body.name,
+        dob: req.body.dob,
+        phone: req.body.phone,
+        email: req.body.email,
+        facebook: req.body.facebook,
+        city: req.body.city,
     })
+    await newMember.save(error => {
+        console.log("new member added")
+
+        if(error){
+            console.log({error});
+            return;
+        }            
+    });
     res.redirect('/members');
 };
