@@ -11,9 +11,12 @@ module.exports.getCreateMembers = (req,res) => {
     res.render('../views/members/members-create-view')
 };
 
-module.exports.getSearchMembers = (req,res) => {
+module.exports.getSearchMembers = async (req,res) => {
     //get query parameter
     let que = req.query.q;
+    //query data
+    let members = await Members.find();
+
     //filter by name
     let matchedMembers = members.filter(member => member.name.toLowerCase().indexOf(que.toLowerCase()) !== -1);
 
@@ -31,6 +34,7 @@ module.exports.postCreateMembers = async (req,res) => {
         facebook: req.body.facebook,
         city: req.body.city,
     })
+
     await newMember.save(error => {
         console.log("new member added")
 
@@ -39,5 +43,6 @@ module.exports.postCreateMembers = async (req,res) => {
             return;
         }            
     });
+    
     res.redirect('/members');
 };
