@@ -3,9 +3,6 @@ const port = 3000;
 const path = require('path');
 const pug = require('pug');
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/emp-management-system');
-
 //locally require
 const memberRouter = require('./routes/members-routes');
 

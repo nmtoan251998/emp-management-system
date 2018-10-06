@@ -10,11 +10,11 @@ block main
         form.form-group(action="/members/members-create" method="POST")
             label Member Information:
             .row
-                input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name" value=(values) ? values.name : '')
-                input.form-control.mb-3(type="date" name="dob" value=values ? values.dob : '')
-                input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone" value=values ? values.phone : '')
-                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="mail" value=values ? values.email : '')
-                input.form-control.mb-3(type="text" placeholder="Facebook URL (Example: facebook.com/minton.2598)" name="facebook")
+                input.form-control.mb-3(type="text"  name="name"    value=(values) ? values.name : '' placeholder="Full name (Example: Toàn đô la)" )
+                input.form-control.mb-3(type="date"  name="dob"     value=(values) ? values.dob : '')
+                input.form-control.mb-3(type="text"  name="phone"   value=(values) ? values.phone : ''   placeholder="Phone (Example: 0123123123)" )                                
+                input.form-control.mb-3(type="email" name="email"   value=(values) ? values.email : ''  placeholder="Email (Example: abcxyz@gmail.com)" )
+                input.form-control.mb-3(type="text"  name="facebook" placeholder="Facebook URL (Example: facebook.com/minton.2598)")
                 select.custom-select(name="city")
                     option(value="Coders.Tokyo") Coders.Tokyo
                     option(value="Cantho") Cần Thơ

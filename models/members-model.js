@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/emp-management-system');
 
 const membersSchema = new mongoose.Schema({
     name: String,
@@ -7,8 +8,10 @@ const membersSchema = new mongoose.Schema({
     email: String,
     facebook: String,
     city: String
+}, {
+    versionKey: false
 });
 
-let Member = mongoose.model('Member', membersSchema, 'members');
+const Member = mongoose.model('Member', membersSchema, 'members');
 
 module.exports = Member;
