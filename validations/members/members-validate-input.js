@@ -7,10 +7,10 @@ module.exports.inputValidate = (req,res,next) => {
         errors.push('Date of birth is required');
     if(!req.body.phone)
         errors.push('Phone is required');
-    if(!req.body.mail)
+    if(!req.body.email)
         errors.push('Mail is required');
-    if(!req.body.location)
-        errors.push('Location is required');
+    if(!req.body.city)
+        errors.push('City is required');
 
     if(errors.length){
         res.render('../views/members/members-create-view', {

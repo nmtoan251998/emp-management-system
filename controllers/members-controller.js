@@ -1,26 +1,10 @@
-let members = [
-    {
-        name: "Nguyễn Minh Toàn",
-        dob: "02/05/1998",
-        phone: "0123123123",
-        email: "toandeptrai@gmail.com",
-        facebook: "facebook.com/minton.2598",
-        location: "Cần Thơ"
-    },
-    {
-        name: "Trần Thị Mỹ Đen",
-        dob: "10/11/1996",
-        phone: "0321321321",
-        email: "mydendepgai@gmail.com",
-        facebook: "facebook.com/mydensodep",
-        location: "Cần Tiền"
-    }
-]
+let Members = require('../models/members-model');
 
-module.exports.getMembers = (req,res) => {
-    res.render('../views/members/members-view', {
-        members: members
-    })
+module.exports.getMembers = async (req,res) => {
+    let newMember = await Members.find();
+        res.render('../views/members/members-view', {
+            members: newMember
+        })    
 };
 
 module.exports.getCreateMembers = (req,res) => {
@@ -39,6 +23,14 @@ module.exports.getSearchMembers = (req,res) => {
 };
 
 module.exports.postCreateMembers = (req,res) => {
-    members.push(req.body);
+    let newMember = req.body;
+    Members.insert({
+        name: newMember.name,
+        dob: newMember.dob,
+        phone: newMember.phone,
+        email: newMember.email,
+        facebook: newMember.facebook,
+        city: newMember.city
+    })
     res.redirect('/members');
 };

@@ -13,13 +13,13 @@ block main
                 input.form-control.mb-3(type="text" placeholder="Full name (Example: Toàn đô la)" name="name" value=(values) ? values.name : '')
                 input.form-control.mb-3(type="date" name="dob" value=values ? values.dob : '')
                 input.form-control.mb-3(type="text" placeholder="Phone (Example: 0123123123)" name="phone" value=values ? values.phone : '')
-                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="email" value=values ? values.email : '')
+                input.form-control.mb-3(type="email" placeholder="Email (Example: abcxyz@gmail.com)" name="mail" value=values ? values.email : '')
                 input.form-control.mb-3(type="text" placeholder="Facebook URL (Example: facebook.com/minton.2598)" name="facebook")
-                select.custom-select
+                select.custom-select(name="city")
                     option(value="Coders.Tokyo") Coders.Tokyo
-                    option(value="Cần Thơ") Cantho
-                    option(value="Hồ Chí Minh") Ho Chi Minh City
-                    option(value="Hà Nội") Hanoi
-                    option(value="Đà Nẵng") Da Nang
-                    option(value="Đà Lạt") Da Lat
+                    option(value="Cantho") Cần Thơ
+                    option(value="Saigon") Sài Gòn
+                    option(value="Hanoi") Hà Nội
+                    option(value="Danang") Đà Nẵng
+                    option(value="Dalat") Đà Lạt
             button.btn.btn-outline-dark.mt-2 Create
