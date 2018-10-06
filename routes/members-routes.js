@@ -13,6 +13,6 @@ const validator = require('../validations/members/members-validate-input');
 router.get('/', controller.getMembers);
 router.get('/members-create', controller.getCreateMembers);
 router.get('/members-search', controller.getSearchMembers);
-router.post('/members-create', validator.inputValidate,controller.postCreateMembers);
+router.post('/members-create', validator.inputValidate, controller.postCreateMembers);
 
 module.exports = router;
