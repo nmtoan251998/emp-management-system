@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
 
 //get main-view
 app.get('/main', (req,res) => {
-    res.render('./home/main-view')
+    res.render('./home/content-view')
 });
 
 //get members-views

@@ -4,4 +4,27 @@ html
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
     body
         block index
-            block main
+            header
+                link(rel="stylesheet", href="/stylesheets/header.css")
+                nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                    ul.navbar-nav.menu-l
+                        li.nav-item.mr-1
+                            a.navbar-brand(href="/")
+                                img(src="/images/coders.tokyo-avartar.png" width="30" height="30" alt="logo")
+                        li.nav-item
+                            a.navbar-brand(href="/main")
+                                span(style="color: black;") Coders.
+                                span(style="color: #88e3b8") Tokyo
+                    ul.navbar-nav.menu-r
+                        li.nav-item
+                            a.navbar-brand(href="/members") Members
+                        li.nav-item
+                            a.navbar-brand(href="http://school.coders.tokyo/login") Study       
+                        li.nav-item
+                            a.navbar-brand(href="https://coders.tokyo/blog/") Blog
+                        li.nav-item
+                            a.navbar-brand(href="https://coders.tokyo/team/") About Us
+            content
+                .pt-5
+                block content
+            

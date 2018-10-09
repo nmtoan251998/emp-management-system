@@ -1,21 +1,24 @@
-link(rel="stylesheet", href="./stylesheets/content.css")
-.slogan
-    h2(style="color: #6bb6e2; font-size: 40px") Together coding the future.
-    strong Cùng nhau học lập trình miễn phí.
-.introduction
-    img(src="/images/founder.jpg", alt="Thinh Pham", width="40%", height="40%")
-    .des
-        h2(style="margin-bottom: 3rem") Ai là người hướng dẫn bạn học?
-        span(style="margin-bottom: 0") Đây là anh
-        span 
-            a(href="https://www.facebook.com/nhim175") Thịnh
-        span  , hiện đang là Lead Developer tại 
-        span
-            a(href="https://www.zehitomo.com/en") Zehitomo
-        span , một Startup ở Tokyo. Với kinh nghiệm 
-        span(style="color: darkblue") 7 năm
-        span  làm lập trình viên web/app, trong đó có 5 năm làm việc tại Nhật Bản, anh Thịnh muốn chia sẻ phương pháp học để giúp các bạn 
-        span(style="color: darkblue") đi đúng hướng, rút ngắn thời gian học, truyền cảm hứng
-        span  cho các bạn theo đuổi con đường trở thành một developer giỏi.
+extends ../layouts/common
+block content
+    link(rel="stylesheet", href="./stylesheets/content.css")
+    .slogan
+        h2(style="color: #6bb6e2; font-size: 40px") Together coding the future.
+        strong Cùng nhau học lập trình miễn phí.
+    .introduction
+        .avatar
+            img(src="/images/founder.jpg", alt="Thinh Pham")
+        .des
+            h2(style="margin-bottom: 3rem") Ai là người hướng dẫn bạn học?
+            span(style="margin-bottom: 0") Đây là anh
+            span 
+                a(href="https://www.facebook.com/nhim175") Thịnh
+            span  , hiện đang là Lead Developer tại 
+            span
+                a(href="https://www.zehitomo.com/en") Zehitomo
+            span , một Startup ở Tokyo. Với kinh nghiệm 
+            span(style="color: darkblue") 7 năm
+            span  làm lập trình viên web/app, trong đó có 5 năm làm việc tại Nhật Bản, anh Thịnh muốn chia sẻ phương pháp học để giúp các bạn 
+            span(style="color: darkblue") đi đúng hướng, rút ngắn thời gian học, truyền cảm hứng
+            span  cho các bạn theo đuổi con đường trở thành một developer giỏi.
 
         

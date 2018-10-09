@@ -1,7 +1,5 @@
 extends ../layouts/common
-block main
-    header
-        include ../home/header-view
+block content
     link(rel="stylesheet", href="/stylesheets/members/members.css")
     .content            
         button.btn.btn-outline-dark.create-btn 
@@ -12,12 +10,11 @@ block main
             form(method="GET").form-inline.form-group
                 select.custom-select.ml-5(required)
                     option(value="Location") Location
-                    option(value="Coders.Tokyo") Coders.Tokyo
-                    option(value="Cantho") Cần Thơ
-                    option(value="Saigon") Sài Gòn
-                    option(value="Hanoi") Hà Nội
-                    option(value="Danang") Đà Nẵng
-                    option(value="Dalat") Đà Lạt
+                    option(value="Cần Thơ") Cần Thơ
+                    option(value="Sài Gòn") Sài Gòn
+                    option(value="Hà Nội") Hà Nội
+                    option(value="Đà Nẵng") Đà Nẵng
+                    option(value="Đà Lạt") Đà Lạt
         table.table.table-bordered.table-hover
             thead.thead-light
                 tr
