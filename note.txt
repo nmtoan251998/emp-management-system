@@ -1,7 +1,1 @@
-look up to the validator expressJS
-
-look up to mongoDb
-
-
-is doing:
-adding data and querying data from mongoose
+Making delete function

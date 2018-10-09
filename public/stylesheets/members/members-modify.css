@@ -1,0 +1,12 @@
+header{
+    margin-bottom: 5%;
+}
+
+.content{
+    margin: 0 30%;
+}
+
+.menu-r a:hover{
+    color: gainsboro !important;
+    text-decoration: underline !important;
+}
