@@ -16,6 +16,6 @@ router.get('/members-search', controller.getSearchMembers);
 router.get('/members-modify/:membersId', controller.getModifyMembers);
 router.get('/members-delete/:membersId', controller.getDeleteMembers);
 router.post('/members-create', validator.inputValidate, controller.postCreateMembers);
-router.post('/members-modify', validator.inputValidate, controller.postModifyMembers);
+router.post('/members-modify/:membersId', validator.inputValidate, controller.postModifyMembers);
 
 module.exports = router;

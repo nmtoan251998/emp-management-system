@@ -13,7 +13,11 @@ module.exports.getCreateMembers = (req,res) => {
 };
 
 module.exports.getModifyMembers = (req,res) => {
-    res.render('../views/members/members-modify-view')
+    //get id of onClicked member
+    let id = req.params.membersId;
+    res.render('../views/members/members-modify-view', {
+        id: id
+    })
 };
 
 module.exports.getSearchMembers = async (req,res) => {
@@ -31,12 +35,11 @@ module.exports.getSearchMembers = async (req,res) => {
 };
 
 module.exports.getDeleteMembers = async (req,res) => {
-    
     //get id of onClicked member
     let id = req.params.membersId;
-    // res.send("<h1>Hello Mother fucker</h1> <br/>" +id);
 
-    let deletingMember = await Members.remove({_id: ObjectId(id)});
+    await Members.deleteOne({_id: ObjectId(id)});
+    
     res.redirect('/members');
 };
 
@@ -66,16 +69,14 @@ module.exports.postModifyMembers = async (req,res) => {
     //get specific id
     let id = req.params.membersId;
 
-    await Members.updateOne(
-        {"_id": ObjectId(id)},
-        {
-            name: req.body.name,
-            dob: req.body.dob,
-            phone: req.body.phone,
-            email: req.body.email,
-            facebook: req.body.facebook,
-            city: req.body.city,
-        },
-        { upsert: true }
-    )
+    await Members.updateOne({_id: ObjectId(id)}, {
+        name: req.body.name,
+        dob: req.body.dob,
+        phone: req.body.phone,
+        email: req.body.email,
+        facebook: req.body.facebook,
+        city: req.body.city,
+    }).orFail();
+
+    res.redirect('/members');
 }
