@@ -22,9 +22,9 @@ app.get('/', (req,res) => {
     res.render('./index-view')
 });
 
-//get main-view
-app.get('/main', (req,res) => {
-    res.render('./home/content-view')
+//get content-view
+app.get('/content', (req,res) => {
+    res.render('./content-view')
 });
 
 //get members-views

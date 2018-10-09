@@ -1,11 +1,11 @@
 extends ../layouts/common
 block content
-    link(rel="stylesheet" href="/stylesheets/members/members-create.css")
+    link(rel="stylesheet" href="/stylesheets/members/members-modify.css")
     .content
         if errors
             each error in errors
                 .alert.alert-danger= error 
-        form.form-group(action="/members/members-create" method="POST")
+        form.form-group(action="/members/members-modify" method="POST")
             label Member Information:
             .row
                 input.form-control.mb-3(type="text"  name="name"    value=(values) ? values.name : '' placeholder="Full name (Example: Toàn đô la)" )
@@ -19,4 +19,6 @@ block content
                     option(value="Hà Nội") Hà Nội
                     option(value="Đà Nẵng") Đà Nẵng
                     option(value="Đà Lạt") Đà Lạt
-            button.btn.btn-outline-dark.mt-3 Create
+            button.btn.btn-outline-dark.mt-3 Save
+            button.btn.btn-outline-dark.mt-3.ml-4 Cancel
+                a(href='/members')
