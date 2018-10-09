@@ -11,12 +11,12 @@
   <li>Bootstrap</li>
 </ol>
 <h3>Back-End</h3>
-<ul>
+<ol>
   <li>NodeJs</li>
   <li>ExpressJs Framework</li>
   <li>MongoDb</li>
   <li>Mongoose</li>
-</ul>
+</ol>
 
 <h2>INSTALLATION</h2>
 <strong>NODEMON module</strong>
