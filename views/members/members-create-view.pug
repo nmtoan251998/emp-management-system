@@ -1,7 +1,5 @@
 extends ../layouts/common
-block main
-    header
-        include ../home/header-view
+block content
     link(rel="stylesheet", href="/stylesheets/members/members-create.css")
     .content
         if errors
@@ -16,10 +14,9 @@ block main
                 input.form-control.mb-3(type="email" name="email"   value=(values) ? values.email : ''  placeholder="Email (Example: abcxyz@gmail.com)" )
                 input.form-control.mb-3(type="text"  name="facebook" placeholder="Facebook URL (Example: facebook.com/minton.2598)")
                 select.custom-select(name="city")
-                    option(value="Coders.Tokyo") Coders.Tokyo
-                    option(value="Cantho") Cần Thơ
-                    option(value="Saigon") Sài Gòn
-                    option(value="Hanoi") Hà Nội
-                    option(value="Danang") Đà Nẵng
-                    option(value="Dalat") Đà Lạt
+                    option(value="Cần Thơ") Cần Thơ
+                    option(value="Sài Gòn") Sài Gòn
+                    option(value="Hà Nội") Hà Nội
+                    option(value="Đà Nẵng") Đà Nẵng
+                    option(value="Đà Lạt") Đà Lạt
             button.btn.btn-outline-dark.mt-2 Create
